@@ -5,7 +5,7 @@
    <input type="text" v-model="box0" />
  </div>
   <button @click="setNumber(0)">
-    0
+    3
   </button>
   <button @click="setNumber(1)">
     1
