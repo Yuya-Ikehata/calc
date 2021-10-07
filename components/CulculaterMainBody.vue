@@ -1,62 +1,40 @@
 <template>
   <div class="app">
- <div>
- <div>
-   <input type="text" v-model="box0" />
- </div>
-  <button @click="setNumber(0)">
-    0
-  </button>
-  <button @click="setNumber(1)">
-    1
-  </button>
-  <button @click="setNumber(2)">
-    2
-  </button>
-  <button @click="setNumber(3)">
-    3
-  </button>
-  <button @click="setNumber(4)">
-    4
-  </button>
-  <button @click="setNumber(5)">
-    5
-  </button>
-  <button @click="setNumber(6)">
-    6
-  </button>
-  <button @click="setNumber(7)">
-    7
-  </button>
-  <button @click="setNumber(8)">
-    8
-  </button>
-  <button @click="setNumber(9)">
-    9
-  </button>
- </div>
- <button @click="operant('+')">
-   +
- </button>
- <button @click="operant('-')">
-   -
- </button>
- <button @click="operant('*')">
-   *
- </button>
- <button @click="operant('/')">
-   /
- </button>
- <div>
-   <button @click="getEqual">
-     =
-   </button>
-   <button @click="clear">
-     ac
-   </button>  
- </div>
-</div>
-
+    <div>
+      <div>
+        <input type="text" v-model="box0" />
+      </div>
+      <div class="topButton">
+        <button @click="clear">ac</button>
+        <button @click="operant('-')">+/-</button>
+        <button @click="operant('*')">%</button>
+        <button @click="operant('/')">/</button>
+      </div>
+      <div class="secondButton">
+        <button @click="setNumber(7)">7</button>
+        <button @click="setNumber(8)">8</button>
+        <button @click="setNumber(9)">9</button>
+        <button @click="operant('*')">*</button>
+      </div>
+      <div class="thirdButton">
+        <button @click="setNumber(4)">4</button>
+        <button @click="setNumber(5)">5</button>
+        <button @click="setNumber(6)">6</button>
+        <button @click="operant('-')">-</button>
+      </div>
+      <div class="forthButton">
+        <button @click="setNumber(1)">1</button>
+        <button @click="setNumber(2)">2</button>
+        <button @click="setNumber(3)">3</button>
+        <button @click="operant('+')">+</button>
+      </div>
+      <div class="fifthButton">
+        <button @click="setNumber(0)">0</button>
+        <button @click="setNumber(0)">.</button>        <!-- 小数点の機能をのちにつける -->
+        <button @click="getEqual">=</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
