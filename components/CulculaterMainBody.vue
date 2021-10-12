@@ -4,34 +4,34 @@
       <input type="text" class="monitorInner" v-model="box0" />
     </div>
     <div class="topButton">
-      <button class="clinkButton" @click="clear">ac</button>
-      <button class="clinkButton" @click="operant('-')">+/-</button>
-      <button class="clinkButton" @click="operant('*')">%</button>
-      <button class="clinkButton" @click="operant('/')">/</button>
+      <button class="clickButton" @click="clear">AC</button>
+      <button class="clickButton" @click="operant('-')">+/-</button>
+      <button class="clickButton" @click="operant('*')">%</button>
+      <button class="clickButton" @click="operant('/')">/</button>
     </div>
     <div class="secondButton">
-      <button class="clinkButton" @click="setNumber(7)">7</button>
-      <button class="clinkButton" @click="setNumber(8)">8</button>
-      <button class="clinkButton" @click="setNumber(9)">9</button>
-      <button class="clinkButton" @click="operant('*')">*</button>
+      <button class="clickButton" @click="setNumber(7)">7</button>
+      <button class="clickButton" @click="setNumber(8)">8</button>
+      <button class="clickButton" @click="setNumber(9)">9</button>
+      <button class="clickButton" @click="operant('*')">*</button>
     </div>
     <div class="thirdButton">
-      <button class="clinkButton" @click="setNumber(4)">4</button>
-      <button class="clinkButton" @click="setNumber(5)">5</button>
-      <button class="clinkButton" @click="setNumber(6)">6</button>
-      <button class="clinkButton" @click="operant('-')">-</button>
+      <button class="clickButton" @click="setNumber(4)">4</button>
+      <button class="clickButton" @click="setNumber(5)">5</button>
+      <button class="clickButton" @click="setNumber(6)">6</button>
+      <button class="clickButton" @click="operant('-')">-</button>
     </div>
     <div class="forthButton">
-      <button class="clinkButton" @click="setNumber(1)">1</button>
-      <button class="clinkButton" @click="setNumber(2)">2</button>
-      <button class="clinkButton" @click="setNumber(3)">3</button>
-      <button class="clinkButton" @click="operant('+')">+</button>
+      <button class="clickButton" @click="setNumber(1)">1</button>
+      <button class="clickButton" @click="setNumber(2)">2</button>
+      <button class="clickButton" @click="setNumber(3)">3</button>
+      <button class="clickButton" @click="operant('+')">+</button>
     </div>
     <div class="fifthButton">
-      <button class="clinkButton" @click="setNumber(0)">0</button>
-      <button class="clinkButton" @click="setNumber(0)">.</button>
+      <button class="clickButton" @click="setNumber(0)">0</button>
+      <button class="clickButton" @click="setNumber(0)">.</button>
       <!-- 小数点の機能をのちにつける -->
-      <button class="clinkButton" @click="getEqual">=</button>
+      <button class="clickButton" @click="getEqual">=</button>
     </div>
   </div>
 </template>
@@ -99,11 +99,43 @@ export default {
 
 <style scoped>
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .app {
+    width: 360px;
+    height: 450px;
     text-align: center;
 }
 
-.monitorInner {
-  border: none;
+.monitor {
+    height: 150px;
 }
+
+.monitorInner {
+    border: none;
+
+}
+
+.topButton, .secondButton, .thirdButton, .forthButton, .fifthButton {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 15px;
+}
+
+.clickButton {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    font-size:25px;
+}
+
+.fifthButton .clickButton:nth-child(1) {
+    width: 160px;
+    text-align: left;
+}
+
+
 </style>
