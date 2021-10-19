@@ -1,42 +1,3 @@
-<template>
-  <div class="app">
-    <div class="monitor">
-      <input type="text" class="monitorInner" v-model="box0" />
-    </div>
-    <div class="topButton">
-      <button class="clickButton" @click="clear">AC</button>
-      <button class="clickButton" @click="operant('-')">+/-</button>
-      <button class="clickButton" @click="operant('*')">%</button>
-      <button class="clickButton" @click="operant('/')">/</button>
-    </div>
-    <div class="secondButton">
-      <button class="clickButton" @click="setNumber(7)">7</button>
-      <button class="clickButton" @click="setNumber(8)">8</button>
-      <button class="clickButton" @click="setNumber(9)">9</button>
-      <button class="clickButton" @click="operant('*')">*</button>
-    </div>
-    <div class="thirdButton">
-      <button class="clickButton" @click="setNumber(4)">4</button>
-      <button class="clickButton" @click="setNumber(5)">5</button>
-      <button class="clickButton" @click="setNumber(6)">6</button>
-      <button class="clickButton" @click="operant('-')">-</button>
-    </div>
-    <div class="forthButton">
-      <button class="clickButton" @click="setNumber(1)">1</button>
-      <button class="clickButton" @click="setNumber(2)">2</button>
-      <button class="clickButton" @click="setNumber(3)">3</button>
-      <button class="clickButton" @click="operant('+')">+</button>
-    </div>
-    <div class="fifthButton">
-      <button class="clickButton" @click="setNumber(0)">0</button>
-      <button class="clickButton" @click="setNumber(0)">.</button>
-      <!-- 小数点の機能をのちにつける -->
-      <button class="clickButton" @click="getEqual">=</button>
-    </div>
-  </div>
-</template>
-
-
 <script>
 export default {
   data() {
@@ -97,6 +58,44 @@ export default {
 }
 </script>
 
+<template>
+  <div class="app">
+    <div class="monitor">
+      <input type="text" class="monitorInner" v-model="box0" />
+    </div>
+    <div class="topButton">
+      <button class="clickButton" @click="clear">AC</button>
+      <button class="clickButton" @click="operant('-')">+/-</button>
+      <button class="clickButton" @click="operant('*')">%</button>
+      <button class="clickButton " @click="operant('/')">/</button>
+    </div>
+    <div class="secondButton">
+      <button class="clickButton" @click="setNumber(7)">7</button>
+      <button class="clickButton" @click="setNumber(8)">8</button>
+      <button class="clickButton" @click="setNumber(9)">9</button>
+      <button class="clickButton" @click="operant('*')">*</button>
+    </div>
+    <div class="thirdButton">
+      <button class="clickButton" @click="setNumber(4)">4</button>
+      <button class="clickButton" @click="setNumber(5)">5</button>
+      <button class="clickButton" @click="setNumber(6)">6</button>
+      <button class="clickButton" @click="operant('-')">-</button>
+    </div>
+    <div class="forthButton">
+      <button class="clickButton" @click="setNumber(1)">1</button>
+      <button class="clickButton" @click="setNumber(2)">2</button>
+      <button class="clickButton" @click="setNumber(3)">3</button>
+      <button class="clickButton" @click="operant('+')">+</button>
+    </div>
+    <div class="fifthButton">
+      <button class="clickButton" @click="setNumber(0)">0</button>
+      <button class="clickButton" @click="setNumber(0)">.</button>
+      <!-- 小数点の機能をのちにつける -->
+      <button class="clickButton" @click="getEqual">=</button>
+    </div>
+  </div>
+</template>
+
 <style scoped>
 
 * {
@@ -128,8 +127,17 @@ export default {
 .clickButton {
     width: 70px;
     height: 70px;
+    border: 0;
     border-radius: 50px;
     font-size:25px;
+    background-color: #444;
+    color: #eee;
+    transition-duration: 0.3s;
+}
+
+.clickButton:active {
+    background-color:#ddd;
+
 }
 
 .fifthButton .clickButton:nth-child(1) {
