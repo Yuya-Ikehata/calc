@@ -14,15 +14,6 @@ export default {
     operant(o) {
       this.box2 = o
     },
-    summary(v) {
-      this.calc = v
-      if (this.first === 0) {
-        this.first = this.math
-        this.math = 0
-      } else {
-        this.second = this.math
-      }
-    },
     getEqual() {
       if (this.box2 === '+') {
         this.box4 = +this.box1 + +this.box3
@@ -46,8 +37,10 @@ export default {
         this.box1 = i
         this.box0 = this.box1
       }
+
     },
     clear() {
+    
       this.box0 = 0
       this.box1 = 0
       this.box2 = 0
